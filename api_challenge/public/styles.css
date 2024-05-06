@@ -1,0 +1,14 @@
+#response {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  padding-left: 30px;
+  padding-right: 30px;
+}
+
+.card-wrapper {
+  border: 1px solid #000;
+  border-radius: 12px;
+  width: 250px;
+  height: 100px;
+}

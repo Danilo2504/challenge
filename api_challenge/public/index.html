@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" type="text/css" href="styles.css" />
+    <title>Example</title>
+  </head>
+  <body>
+    <div id="response"></div>
+
+    <script>
+      fetch("http://localhost/api_challenge/product")
+        .then((response) => response.json())
+        .then((data) => {
+          data.map((item) => {
+            const response = document.getElementById("response");
+            const newCard = document.createElement("div");
+            newCard.className = "card-wrapper";
+            newCard.innerHTML = `
+              <p><strong>Nombre:</strong> ${item.name}</p>
+              <p><strong>Precio:</strong> ${item.price}</p>
+              <p><strong>Stock:</strong> ${item.stock}</p>
+          `;
+            response.appendChild(newCard);
+          });
+        })
+        .catch((error) =>
+          console.error("Error al obtener la respuesta:", error)
+        );
+    </script>
+  </body>
+</html>
