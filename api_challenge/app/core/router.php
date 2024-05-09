@@ -14,11 +14,17 @@ class Router
     $this->add('POST', $path, $handler);
   }
 
+  private function add(string $method, string $path, $handler)
+  {
+    $this->router[] = ['method' => $method, 'path' => $path, 'handler' => $handler];
+
+    return $this;
+  }
+
   private function getMatchRouterByMethod()
   {
     $method = $_SERVER['REQUEST_METHOD'];
-    $request_uri =  parse_url($_SERVER['REQUEST_URI']);
-    $url = str_replace('api_challenge/', '', $request_uri['path']);
+    $url = $_SERVER['REQUEST_URI'];
     foreach ($this->router as $value) {
       if ($value['method'] === $method && $value['path'] === $url) {
         array_push($this->matchRouter, $value);
@@ -30,21 +36,14 @@ class Router
   {
     $this->getMatchRouterByMethod();
     if (!$this->matchRouter || empty($this->matchRouter)) {
-      http_response_code(404);
-      echo "404 Not Found";
+      http_response_code(400);
+      echo json_encode('Signature Verification Exception');
     } else {
       if (is_callable($this->matchRouter[0]['handler']))
         call_user_func($this->matchRouter[0]['handler']);
       else
         $this->runController($this->matchRouter[0]['handler']);
     }
-  }
-
-  private function add(string $method, string $path, $handler)
-  {
-    $this->router[] = ['method' => $method, 'path' => $path, 'handler' => $handler];
-
-    return $this;
   }
 
   private function runController($controller)
@@ -58,14 +57,14 @@ class Router
       if (class_exists($controller))
         $controller = new $controller();
     } else {
-      http_response_code(404);
-      echo "404 Not Found";
+      http_response_code(400);
+      echo json_encode('Signature Verification Exception');
     }
     if (isset($parts[1])) {
       $method = $parts[1];
       if (!method_exists($controller, $method)) {
-        http_response_code(404);
-        echo "404 Not Found";
+        http_response_code(400);
+        echo json_encode('Signature Verification Exception');
       }
     } else {
       $method = 'index';
@@ -73,8 +72,8 @@ class Router
     if (is_callable([$controller, $method])) {
       return call_user_func([$controller, $method]);
     } else {
-      http_response_code(404);
-      echo "404 Not Found";
+      http_response_code(400);
+      echo json_encode('Signature Verification Exception');
     }
   }
 }

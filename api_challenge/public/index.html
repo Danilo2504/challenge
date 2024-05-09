@@ -4,30 +4,48 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" type="text/css" href="styles.css" />
-    <title>Example</title>
+    <title>Frontend Developer Test</title>
   </head>
   <body>
-    <div id="response"></div>
+    <div class="container">
+      <h2>Example of Shop</h2>
+      <div class="form-wrapper">
+        <h3>Create a Product</h3>
+        <form id="form">
+          <div>
+            <label for="name">Nome</label>
+            <input type="text" id="name" name="name" autocomplete="off" />
+          </div>
+          <div>
+            <label for="price">Prezio</label>
+            <input type="text" id="price" name="price" autocomplete="off" />
+          </div>
+          <div>
+            <label for="stock">Stock </label>
+            <input
+              type="number"
+              id="stock"
+              name="stock"
+              min="1"
+              max="100"
+              value="1"
+            />
+          </div>
+          <button type="submit" id="button">Envia</button><br />
+        </form>
+        <p id="message"></p>
+      </div>
 
-    <script>
-      fetch("http://localhost/api_challenge/product")
-        .then((response) => response.json())
-        .then((data) => {
-          data.map((item) => {
-            const response = document.getElementById("response");
-            const newCard = document.createElement("div");
-            newCard.className = "card-wrapper";
-            newCard.innerHTML = `
-              <p><strong>Nombre:</strong> ${item.name}</p>
-              <p><strong>Precio:</strong> ${item.price}</p>
-              <p><strong>Stock:</strong> ${item.stock}</p>
-          `;
-            response.appendChild(newCard);
-          });
-        })
-        .catch((error) =>
-          console.error("Error al obtener la respuesta:", error)
-        );
-    </script>
+      <div id="response"></div>
+      <div class="payments-container">
+        <h3>Payments</h3>
+        <div id="payments"></div>
+      </div>
+    </div>
+    <script src="requests/getAllPayments.js"></script>
+    <script src="requests/checkoutProduct.js"></script>
+    <script src="requests/createProduct.js"></script>
+    <script src="requests/getAllProducts.js"></script>
+    <script src="main.js"></script>
   </body>
 </html>

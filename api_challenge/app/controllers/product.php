@@ -5,36 +5,23 @@ class ProductController
  public function index()
  {
   $model = new ModelsProduct();
-  $result = $model->getAllProds();
-  $data = [];
+  $result = $model->getAllProducts();
 
-  if ($result->num_rows > 0) {
-   while ($row = $result->fetch_assoc()) {
-    $data[] = $row;
-   }
-  }
-
-  header('Content-Type: application/json');
   http_response_code(200);
-  echo json_encode($data);
+  echo json_encode($result);
  }
+
  public function createProd()
  {
   $request_method = $_SERVER['REQUEST_METHOD'];
-  if ($request_method === 'GET') {
-
+  if ($request_method === 'POST') {
+   $post_data = file_get_contents('php://input');
+   $data = json_decode($post_data);
    $model = new ModelsProduct();
-   // $result = $model->createProduct();
-   $model->createProduct();
-   // $data = [];
-   // if ($result->num_rows > 0) {
-   //  while ($row = $result->fetch_assoc()) {
-   //   $data[] = $row;
-   //  }
-   // }
-   header('Content-Type: application/json');
+   $result = $model->createProduct($data);
+
    http_response_code(200);
-   // echo json_encode($data);
+   echo json_encode($result);
   }
  }
 }
