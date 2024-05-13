@@ -81,7 +81,7 @@ class StripeController
     $quantity = $product['quantity'];
     $price = intval($product['price']) * 100;
 
-    $YOUR_DOMAIN = BASE_URL_API['base_url'];
+    $YOUR_DOMAIN = $_ENV['API_URL'];
 
     $checkout_session = \Stripe\Checkout\Session::create([
       'line_items' => [[
