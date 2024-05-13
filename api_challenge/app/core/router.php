@@ -16,7 +16,8 @@ class Router
 
   private function add(string $method, string $path, $handler)
   {
-    $this->router[] = ['method' => $method, 'path' => $path, 'handler' => $handler];
+    $url = BASE_URL_API['base_path'] . $path;
+    $this->router[] = ['method' => $method, 'path' => $url, 'handler' => $handler];
 
     return $this;
   }

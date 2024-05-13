@@ -1,5 +1,5 @@
 window.onload = getAllProducts().then((data) => cardProduct(data));
-window.onload = getAllPayments().then((data) => cardPayment(data));
+window.onload = getAllCheckouts().then((data) => cardCheckout(data));
 
 const cardProduct = (products) => {
   const response = document.getElementById("response");
@@ -41,32 +41,35 @@ const cardProduct = (products) => {
   });
 };
 
-const cardPayment = (payments) => {
-  const paymentsResponse = document.getElementById("payments");
-  paymentsResponse.innerHTML = "";
-  payments.map((payment) => {
+const cardCheckout = (checkouts) => {
+  const checkoutsResponse = document.getElementById("checkouts");
+  checkoutsResponse.innerHTML = "";
+  checkouts.map((checkout) => {
     const cardContainer = document.createElement("div");
-    const cardId = document.createElement("p");
-    const cardDate = document.createElement("p");
-    const cardMethod = document.createElement("p");
-    const cardAmount = document.createElement("p");
+    const cardName = document.createElement("p");
+    const cardEmail = document.createElement("p");
+    const cardPhone = document.createElement("p");
     const cardStatus = document.createElement("p");
+    const cardDate = document.createElement("p");
+    const cardAmount = document.createElement("p");
 
     cardContainer.className = "payment-card";
 
-    cardId.textContent = `Payment Id: ${payment.id}`;
-    cardDate.textContent = `Buy Date: ${payment.buy_date}`;
-    cardMethod.textContent = `Payment Method Id: ${payment.payment_method}`;
-    cardAmount.textContent = `Amount: € ${payment.amount}`;
-    cardStatus.textContent = `Payment Status: ${payment.payment_status}`;
+    cardName.textContent = `Customer Name: ${checkout.name}`;
+    cardEmail.textContent = `Customer Email: ${checkout.email}`;
+    cardPhone.textContent = `Customer Phone: ${checkout.phone}`;
+    cardStatus.textContent = `Payment Status: ${checkout.payment_status}`;
+    cardAmount.textContent = `Amount: € ${checkout.amount}`;
+    cardDate.textContent = `Buy Date: ${checkout.date}`;
 
-    cardContainer.appendChild(cardId);
-    cardContainer.appendChild(cardDate);
-    cardContainer.appendChild(cardMethod);
-    cardContainer.appendChild(cardAmount);
+    cardContainer.appendChild(cardName);
+    cardContainer.appendChild(cardEmail);
+    cardContainer.appendChild(cardPhone);
     cardContainer.appendChild(cardStatus);
+    cardContainer.appendChild(cardAmount);
+    cardContainer.appendChild(cardDate);
 
-    paymentsResponse.appendChild(cardContainer);
+    checkoutsResponse.appendChild(cardContainer);
   });
 };
 

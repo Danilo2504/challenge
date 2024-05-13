@@ -1,5 +1,5 @@
 const getAllProducts = async () => {
-  return fetch("http://api.test:80/products").then((response) =>
-    response.json()
+  return fetch("http://localhost:80/challenge/api_challenge/products").then(
+    (response) => response.json()
   );
 };

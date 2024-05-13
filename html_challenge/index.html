@@ -1,0 +1,880 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, maximum-scale=1.0"
+    />
+
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH"
+      crossorigin="anonymous"
+    />
+    <link type="text/css" rel="stylesheet" href="index.css" />
+    <title>Luigi Rosso</title>
+  </head>
+  <body>
+    <!-- HERO -->
+    <div id="hero" class="position-relative">
+      <div
+        class="vh-100 w-100 d-sm-none position-absolute top-0 start-0 ratio"
+        style="
+          background: url('./assets/hero-mobile.jpg');
+          z-index: -10;
+          background-size: cover;
+        "
+      ></div>
+      <video
+        class="d-none d-sm-flex ratio-16x9 position-absolute top-0 start-0 h-100 w-100 object-fit-cover"
+        style="z-index: -10"
+        poster="./assets/hero.png"
+        loop
+        autoplay
+      >
+        <source src="./assets/hero-video.mp4" type="video/mp4" />
+        Sorry, your browser doesn't support HTML5 video tag.
+      </video>
+      <div
+        class="position-absolute h-100 w-100"
+        style="background-color: var(--dark-brown-transparent); z-index: -1"
+      ></div>
+      <div class="container-fluid vh-100 w-100 p-0 d-flex flex-column">
+        <header
+          class="w-100 d-flex justify-content-center align-items-center bg-dark-brown"
+        >
+          <p
+            class="text-white m-0 text-center text-11-to-16 lato-regular"
+            style="padding: 0.75rem 0px"
+          >
+            Acquistiamo orologi da collezione. Clicca qui per ricevere una
+            valutazione!
+          </p>
+        </header>
+        <div
+          class="row flex-grow-1 d-none d-sm-flex"
+          style="margin: 3.15rem 2rem 0px 2rem"
+        >
+          <div class="col-2 p-0">
+            <a
+              class="text-white text-16 lato-regular text-center d-inline-flex align-items-center menu-button"
+              style="gap: 0.6rem"
+            >
+              <img src="./assets/menu.svg" height="18" width="32" />
+              MENU’
+            </a>
+          </div>
+          <div
+            class="col-8 p-0 d-flex flex-column align-items-center justify-content-between"
+          >
+            <img src="./assets/title.png" width="360" height="55" />
+            <main class="d-flex flex-column align-items-center">
+              <h1
+                class="cormorant-garamond-regular text-white text-40"
+                style="margin-bottom: 26px"
+              >
+                Dal 1986 orologi da collezione e gioielli
+              </h1>
+              <h2
+                class="lato-regular text-white text-22"
+                style="margin-bottom: 28px"
+              >
+                Orologi da collezione in vendita
+              </h2>
+              <form class="d-flex flex-row w-100" style="margin-bottom: 21px">
+                <div class="dropdown lato-regular">
+                  <button
+                    class="dropdown-toggle border-0 lato-regular bg-light-brown text-white text-16"
+                    style="padding: 0.9rem; border-radius: 6px 0px 0px 6px"
+                    type="button"
+                    id="dropdownMenuButton1"
+                    data-bs-toggle="dropdown"
+                    aria-expanded="false"
+                  >
+                    Brand - tutti
+                  </button>
+                  <ul
+                    class="dropdown-menu"
+                    aria-labelledby="dropdownMenuButton1"
+                  >
+                    <li><a class="dropdown-item" href="#">Watch</a></li>
+                    <li>
+                      <a class="dropdown-item" href="#">Jewelry</a>
+                    </li>
+                  </ul>
+                </div>
+                <div class="input-group">
+                  <span
+                    class="input-group-text rounded-0 border-0 bg-white"
+                    id="basic-addon1"
+                    ><img src="./assets/len.svg"
+                  /></span>
+                  <input
+                    type="text"
+                    class="lato-regular border-0 flex-fill"
+                    placeholder="Cerca tra 1200 Orologi"
+                  />
+                </div>
+                <button
+                  class="bg-light-brown text-white text-16 border-0"
+                  style="border-radius: 0px 6px 6px 0px; padding: 0.9rem"
+                >
+                  CERCA
+                </button>
+              </form>
+              <a class="text-white text-16 lato-bold">Vedi tutti gli orologi</a>
+            </main>
+            <a style="margin-bottom: 28px"
+              ><img
+                src="./assets/arrow-down-outline.svg"
+                height="10"
+                width="21"
+            /></a>
+          </div>
+          <div class="col-2 p-0 position-relative">
+            <a
+              class="text-white text-16 lato-regular text-center position-absolute end-0"
+            >
+              ITA
+              <img
+                src="./assets/arrow-down.svg"
+                height="7"
+                width="13"
+                style="margin-left: 0.3rem"
+              />
+            </a>
+          </div>
+        </div>
+        <!-- NAV MOBILE -->
+        <div class="d-sm-none row" style="padding: 1.13rem 1.25rem 0px 1.25rem">
+          <div class="d-flex flex-row justify-content-between">
+            <a
+              class="menu-button lato-regular text-center d-flex align-items-center"
+              style="gap: 0.6rem"
+            >
+              <img src="./assets/menu.svg" height="18" width="32" />
+            </a>
+            <a class="text-white text-16 lato-regular text-center">
+              ITA
+              <img
+                src="./assets/arrow-down.svg"
+                height="7"
+                width="13"
+                style="margin-left: 0.3rem"
+              />
+            </a>
+          </div>
+        </div>
+        <div class="d-sm-none row flex-grow-1" style="padding: 0px 1.25rem">
+          <div
+            class="d-flex flex-column align-items-center justify-content-center"
+          >
+            <img
+              src="./assets/title.png"
+              width="276"
+              height="42"
+              style="margin-bottom: 27px"
+            />
+            <h1
+              class="cormorant-garamond-regular text-white text-28"
+              style="margin-bottom: 34px"
+            >
+              Dal 1986 orologi da collezione e gioielli
+            </h1>
+            <h2
+              class="lato-regular text-white text-14"
+              style="margin-bottom: 10px"
+            >
+              Orologi da collezione in vendita
+            </h2>
+            <form class="d-flex flex-column w-100" style="margin-bottom: 21px">
+              <div class="dropdown lato-regular">
+                <button
+                  class="dropdown-toggle border-0 lato-regular bg-light-brown text-white text-14 w-100 d-flex justify-content-between align-items-center"
+                  style="
+                    padding: 0.75rem 1.25rem;
+                    border-radius: 8px 8px 0px 0px;
+                  "
+                  type="button"
+                  id="dropdownMenuButton1"
+                  data-bs-toggle="dropdown"
+                  aria-expanded="false"
+                >
+                  Brand - tutti
+                </button>
+                <ul
+                  class="dropdown-menu w-100"
+                  aria-labelledby="dropdownMenuButton1"
+                >
+                  <li><a class="dropdown-item" href="#">Watch</a></li>
+                  <li>
+                    <a class="dropdown-item" href="#">Jewelry</a>
+                  </li>
+                </ul>
+              </div>
+              <div
+                class="bg-white text-center"
+                style="border-radius: 0px 0px 8px 8px; margin-bottom: 10px"
+              >
+                <label class="label-icon">
+                  <input
+                    type="text"
+                    class="lato-regular border-0 flex-fill text-14"
+                    style="padding: 1rem 2rem"
+                    placeholder="Cerca tra 1200 Orologi"
+                  />
+                </label>
+              </div>
+              <button
+                class="bg-light-brown lato-bold text-white text-16 border-0"
+                style="border-radius: 8px; padding: 0.75rem"
+              >
+                CERCA
+              </button>
+            </form>
+            <a class="text-white text-16 lato-bold">Vedi tutti gli orologi</a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- MENU -->
+    <div id="menu-view" class="container-fluid custom-hide-menu">
+      <div
+        class="h-100 w-100 d-flex justify-content-center position-relative"
+        style="margin: 3.15rem 2rem 0px 2rem"
+      >
+        <a
+          id="close-menu-button"
+          class="text-white text-16 lato-regular text-center d-inline-flex align-items-center position-absolute start-0 top-0"
+          style="gap: 0.6rem"
+        >
+          <img src="./assets/cross.svg" height="25" width="25" />
+          CHIUDI
+        </a>
+        <div
+          class="d-flex flex-column align-items-center"
+          style="margin-top: 4rem; gap: 2.3rem"
+        >
+          <img src="./assets/title.png" height="50" width="326" />
+          <div class="text-center">
+            <a class="custom-menu-h2">ROLOGI IN VENDITA</a>
+            <p class="custom-menu-p">DA COLLEZIONE</p>
+          </div>
+          <div class="text-center">
+            <a class="custom-menu-h2">ACQUISTO OROLOGI</a>
+            <p class="custom-menu-p">VUOI VENDERE IL TUO?</p>
+          </div>
+          <div class="text-center">
+            <a class="custom-menu-h2">ASSISTENZA</a>
+            <p class="custom-menu-p">E RIPARAZIONI</p>
+          </div>
+          <div class="text-center">
+            <a class="custom-menu-h2">LUIGI ROSSO</a>
+            <p class="custom-menu-p">CHI SIAMO</p>
+          </div>
+          <a class="custom-menu-h2">CONTATTI</a>
+          <div class="d-inline-flex gap-2">
+            <img src="./assets/facebook_icon.svg" />
+            <img src="./assets/instagram_icon.svg" />
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- FEATURES -->
+    <div id="features" class="container-fluid">
+      <div class="row d-none d-sm-flex">
+        <div class="col-6 p-0">
+          <img
+            src="./assets/image_1.png"
+            height="493"
+            class="w-100 h-100 ratio-1x1"
+          />
+        </div>
+        <div
+          class="col-6 p-0 bg-light-yellow d-flex justify-content-center align-items-center"
+        >
+          <div
+            class="col-sm-8 text-black align-items-center d-flex flex-column"
+          >
+            <h3
+              class="cormorant-garamond-semibold custom-feature-h3 text-center text-30-to-25"
+            >
+              ACQUISTIAMO OROLOGI
+            </h3>
+            <p class="lato-regular custom-feature-p text-center text-16-to-14">
+              Acquistiamo orologi di marche importanti, moderni, d’epoca e da
+              collezione.
+            </p>
+            <button
+              class="btn btn-primary lato-bold custom-feature-button"
+              type="submit"
+            >
+              SCOPRI DI PIU’
+            </button>
+          </div>
+        </div>
+      </div>
+      <div class="row d-none d-sm-flex">
+        <div
+          class="col-6 p-0 bg-light-yellow d-flex justify-content-center align-items-center"
+        >
+          <div
+            class="col-sm-8 text-black align-items-center d-flex flex-column"
+          >
+            <h3
+              class="cormorant-garamond-semibold custom-feature-h3 text-center text-30-to-25"
+            >
+              LUIGI ROSSO - OROLOGI E GIOIELLI
+            </h3>
+            <p class="lato-regular custom-feature-p text-center text-16-to-14">
+              Iniziai ad occuparmi di orologi nel 1986, qualche anno fa… Ebbi la
+              fortuna, oggi lo so, di essere assunto in quello che all’epoca era
+              il concessionario Rolex della mia cittadina, Casale Monferrato.
+            </p>
+            <button
+              class="btn btn-primary lato-bold custom-feature-button"
+              type="submit"
+            >
+              CONTINUA
+            </button>
+          </div>
+        </div>
+        <div class="col-6 p-0">
+          <img
+            src="./assets/image_2.png"
+            style="aspect-ratio: 360/259"
+            class="w-100 h-100"
+          />
+        </div>
+      </div>
+      <!-- FEATURES MOBILE -->
+      <div class="row d-sm-none vh-100">
+        <div
+          class="bg-light-yellow d-flex justify-content-center align-items-center"
+          style="padding: 40px"
+        >
+          <div
+            class="text-black justify-content-center align-items-center d-flex flex-column"
+          >
+            <h3
+              class="cormorant-garamond-semibold custom-feature-h3 text-center text-30-to-25"
+            >
+              ACQUISTIAMO OROLOGI
+            </h3>
+            <p class="lato-regular custom-feature-p text-center text-16-to-14">
+              Acquistiamo orologi di marche importanti, moderni, d’epoca e da
+              collezione.
+            </p>
+            <button
+              class="btn btn-primary lato-bold custom-feature-button"
+              type="submit"
+            >
+              SCOPRI DI PIU’
+            </button>
+          </div>
+        </div>
+        <div
+          class="p-0 w-100 h-auto"
+          style="
+            background: url('./assets/image_1.png');
+            background-size: cover;
+            aspect-ratio: 720/493;
+          "
+        ></div>
+      </div>
+      <div class="row d-sm-none vh-100">
+        <div
+          class="bg-light-yellow d-flex justify-content-center align-items-center"
+          style="padding: 40px"
+        >
+          <div
+            class="text-black justify-content-center align-items-center d-flex flex-column"
+          >
+            <h3
+              class="cormorant-garamond-semibold custom-feature-h3 text-center text-30-to-25"
+            >
+              LUIGI ROSSO OROLOGI E GIOIELLI
+            </h3>
+            <p class="lato-regular custom-feature-p text-center text-16-to-14">
+              Iniziai ad occuparmi di orologi nel 1986, qualche anno fa… Ebbi la
+              fortuna, oggi lo so, di essere assunto in quello che all’epoca era
+              il concessionario Rolex della mia cittadina, Casale Monferrato.
+            </p>
+            <button
+              class="btn btn-primary lato-bold custom-feature-button"
+              type="submit"
+            >
+              CONTINUA
+            </button>
+          </div>
+        </div>
+        <div
+          class="p-0 w-100 h-auto"
+          style="
+            background: url('./assets/image_2.png');
+            background-size: cover;
+            aspect-ratio: 360/259;
+          "
+        ></div>
+      </div>
+    </div>
+    <!-- REVIEWS -->
+    <div
+      id="reviews"
+      class="container-fluid bg-semi-dark-yellow"
+      style="padding: 64px 72px 66px 66px"
+    >
+      <div
+        class="row justify-content-center align-content-center"
+        style="font-size: 30px"
+      >
+        <div
+          class="justify-content-center align-items-center cormorant-garamond-semibold"
+        >
+          <h3 class="cormorant-garamond-semibold custom-feature-h3 text-center">
+            DICONO DI NOI
+          </h3>
+          <div class="d-flex justify-content-center align-items-center">
+            <img
+              src="./assets/google_logo_big.png"
+              style="margin-bottom: 8px; margin-top: 20px"
+              height="42px"
+              width="128px"
+            />
+          </div>
+          <p
+            class="text-center arial-regular"
+            style="font-size: 14px; margin-bottom: 30px"
+          >
+            <span class="arial-bold">4,9</span> - 201 recensioni Google
+          </p>
+        </div>
+      </div>
+      <div id="reviewsContainer" class="row d-none d-sm-grid"></div>
+      <!-- REVIEW CAROUSEL MOBILE -->
+      <div id="carouselReviewsContainer" class="row d-sm-none d-flex"></div>
+      <div class="text-center d-sm-none">
+        <span class="custom-carousel-dot"></span>
+        <span class="custom-carousel-dot"></span>
+        <span class="custom-carousel-dot"></span>
+      </div>
+      <div class="row justify-content-center align-items-center">
+        <button
+          class="btn btn-primary lato-bold custom-feature-button"
+          type="submit"
+        >
+          LEGGI TUTTE
+        </button>
+      </div>
+    </div>
+    <!-- CONTACT -->
+    <div class="position-relative p-0 w-100">
+      <div class="container-fluid contactContainer">
+        <div class="contactCard">
+          <img src="./assets/pin.svg" height="43.48px" width="28.99px" />
+          <h3
+            class="cormorant-garamond-semibold custom-feature-h3 text-center"
+            style="margin: 20px 0px 8px 0px"
+          >
+            VISITA IL NOSTRO NEGOZIO
+          </h3>
+          <div class="text-center lato-regular" style="font-size: 16px">
+            <p>Luigi Rosso - Orologi e Gioielli</p>
+            <p>Via Aurelio Saffi n° 3</p>
+            <p>15033 - Casale Monferrato (AL) - Italy</p>
+            <p>P.IVA: 01542570062</p>
+          </div>
+          <div
+            style="width: 1.3rem; border: 2px solid #8e7f4a; margin: 10px 0px"
+          ></div>
+          <strong>Per ulteriori informazioni:</strong>
+          <p>+39 0142 455969</p>
+          <p>+39 0142 453328</p>
+          <strong>info@luigirossogioielli.com</strong>
+        </div>
+      </div>
+    </div>
+    <!-- FOOTER -->
+    <div class="container-fluid bg-dark-brown min-vh-100">
+      <div
+        class="row"
+        style="
+          padding: 5rem 0px 4rem 0px;
+          border-bottom: 1px solid var(--light-grey-transparent);
+        "
+      >
+        <div
+          class="col-12 col-md-4 d-flex flex-column justify-content-center position-relative text-center text-md-start text-light-grey custom-padding-new-letter"
+        >
+          <h3 class="cormorant-garamond-semibold m-0 text-25">NEWSLETTER</h3>
+          <p
+            class="lato-regular px-md-0 px-2 text-14"
+            style="margin-top: 1.3rem; margin-bottom: 1rem"
+          >
+            Iscriviti alla nostra Newsletter per essere sempre aggiornato sui
+            nuovi orologi disponibili!
+          </p>
+          <form
+            class="lato-regular d-flex flex-column justify-content-sm-start justify-content-center"
+          >
+            <input
+              type="text"
+              class="lato-regular border-0 flex-fill margin-vertical-08"
+              style="padding: 0.8rem"
+              placeholder="Nome"
+            />
+            <input
+              type="text"
+              class="lato-regular border-0 flex-fill margin-vertical-08"
+              style="padding: 0.8rem"
+              placeholder="Cognome"
+            />
+            <input
+              type="email"
+              class="lato-regular border-0 flex-fill margin-vertical-08"
+              style="padding: 0.8rem"
+              placeholder="Email"
+            />
+            <input
+              name="cssCheckbox"
+              id="demo_opt_1"
+              type="checkbox"
+              class="css-checkbox"
+            />
+            <label for="demo_opt_1"
+              >Ho letto e accetto termini e condizioni del sito web</label
+            >
+            <button
+              class="lato-bold bg-light-brown text-white border-0 me-sm-4 mx-sm-0 mx-4"
+              type="submit"
+              style="margin-top: 1rem; padding: 12px 0px; border-radius: 6px"
+            >
+              ISCRIVIMI
+            </button>
+          </form>
+          <div
+            class="position-absolute end-0 top-50 bottom-50 translate-middle-y"
+            style="
+              border-right: 1px solid var(--light-grey-transparent);
+              height: 100%;
+            "
+          ></div>
+        </div>
+        <div
+          class="col-4 d-none d-md-flex flex-column justify-content-center align-items-center"
+        >
+          <img
+            src="./assets/title.png"
+            width="308.1px"
+            height="46.83px"
+            style="aspect-ratio: 721/110; margin-bottom: 4rem"
+          />
+          <div class="d-flex justify-content-center" style="gap: 8px">
+            <a class="d-inline-flex"
+              ><img src="./assets/facebook_icon.svg"
+            /></a>
+            <a class="d-inline-flex"
+              ><img src="./assets/instagram_icon.svg"
+            /></a>
+          </div>
+        </div>
+        <div
+          class="col-4 d-none d-md-flex justify-content-center position-relative"
+          style="color: var(--light-grey); padding-right: 5rem"
+        >
+          <div
+            class="d-flex flex-column justify-content-start align-items-start"
+          >
+            <h3
+              class="cormorant-garamond-semibold"
+              style="font-size: 20px; margin-bottom: 1.4rem"
+            >
+              NAVIGA
+            </h3>
+            <nav class="d-flex flex-column gap-3">
+              <a>Home</a>
+              <a>Orologi in vendita</a>
+              <a>Acquistiamo orologi</a>
+              <a>Assistenza e riparazioni</a>
+              <a>Chi siamo</a>
+              <a>Contatti</a>
+            </nav>
+          </div>
+          <div
+            class="position-absolute start-0 top-50 bottom-50 translate-middle-y"
+            style="
+              border-right: 1px solid var(--light-grey-transparent);
+              height: 100%;
+            "
+          ></div>
+        </div>
+      </div>
+      <div class="row custom-footer-marchi">
+        <h3 class="d-none d-sm-block text-center" style="margin-bottom: 5rem">
+          TUTTI I MARCHI
+        </h3>
+        <h3 class="text-center d-sm-none text-25">MARCHI</h3>
+        <div class="row d-none d-sm-flex">
+          <div class="col-3 d-flex flex-column gap-3">
+            <h3 style="font-size: 1.4rem; margin: 0px">MARCHI</h3>
+            <div class="d-flex flex-column gap-1">
+              <h4 class="custom-footer-h4">A</h4>
+              <a class="custom-footer-link">Audemars Piguet (12)</a>
+            </div>
+            <div class="d-flex flex-column gap-1">
+              <h4 class="custom-footer-h4">B</h4>
+              <a class="custom-footer-link">Baume & Mercier (1)</a>
+              <a class="custom-footer-link">Bell & Ross (1)</a>
+              <a class="custom-footer-link">Blancpain (8)</a>
+              <a class="custom-footer-link">Breguet (9)</a>
+              <a class="custom-footer-link">Breitling (9)</a>
+              <a class="custom-footer-link">Bulgari (9)</a>
+              <a class="custom-footer-link">Brillanti (9)</a>
+            </div>
+            <div class="d-flex flex-column gap-1">
+              <h4 class="custom-footer-h4">C</h4>
+              <a class="custom-footer-link">Cartier (12)</a>
+              <a class="custom-footer-link">Chanel (12)</a>
+              <a class="custom-footer-link">Chopard (12)</a>
+              <a class="custom-footer-link">Corum (12)</a>
+            </div>
+          </div>
+          <div class="col-3 d-flex flex-column gap-3">
+            <div style="height: 1.4rem"></div>
+            <div class="d-flex flex-column gap-1">
+              <h4 class="custom-footer-h4">D</h4>
+              <a class="custom-footer-link">Daniel Roth</a>
+            </div>
+            <div class="d-flex flex-column gap-1">
+              <h4 class="custom-footer-h4">E</h4>
+              <a class="custom-footer-link">Ebel</a>
+            </div>
+            <div class="d-flex flex-column gap-1">
+              <h4 class="custom-footer-h4">H</h4>
+              <a class="custom-footer-link">H. Moser & Cie.</a>
+              <a class="custom-footer-link">Hublot</a>
+            </div>
+            <div class="d-flex flex-column gap-1">
+              <h4 class="custom-footer-h4">I</h4>
+              <a class="custom-footer-link">IWC</a>
+            </div>
+            <div class="d-flex flex-column gap-1">
+              <h4 class="custom-footer-h4">J</h4>
+              <a class="custom-footer-link">Jaeger Le Coultre</a>
+            </div>
+            <div class="d-flex flex-column gap-1">
+              <h4 class="custom-footer-h4">L</h4>
+              <a class="custom-footer-link">Longines</a>
+            </div>
+            <div class="d-flex flex-column gap-1">
+              <h4 class="custom-footer-h4">O</h4>
+              <a class="custom-footer-link">Omega</a>
+            </div>
+          </div>
+          <div class="col-3 d-flex flex-column gap-3">
+            <div style="height: 1.4rem"></div>
+            <div class="d-flex flex-column gap-1">
+              <h4 class="custom-footer-h4">P</h4>
+              <a class="custom-footer-link">Panerai</a>
+              <a class="custom-footer-link">Patek Philippe</a>
+              <a class="custom-footer-link">Paul Picot</a>
+              <a class="custom-footer-link">Parmigiani</a>
+            </div>
+            <div class="d-flex flex-column gap-1">
+              <h4 class="custom-footer-h4">R</h4>
+              <a class="custom-footer-link">Richard Mille</a>
+              <a class="custom-footer-link">Roger Dubuis</a>
+              <a class="custom-footer-link">Rolex Daytona</a>
+              <a class="custom-footer-link">Rolex GMT</a>
+              <a class="custom-footer-link">Rolex Submariner</a>
+              <a class="custom-footer-link">Rolex Sea Dweller</a>
+              <a class="custom-footer-link">Rolex Sky Dweller</a>
+              <a class="custom-footer-link">Rolex Yacht Master</a>
+              <a class="custom-footer-link">Rolex Milgauss</a>
+              <a class="custom-footer-link">Rolex Explorer</a>
+            </div>
+          </div>
+          <div class="col-3 d-flex flex-column gap-3">
+            <h3 style="font-size: 1.4rem; margin: 0px">I PIU’ CERCATI</h3>
+            <div class="d-flex flex-column">
+              <a class="custom-footer-link">Rolex Cellini</a>
+              <a class="custom-footer-link">Rolex Day Date</a>
+              <a class="custom-footer-link">Rolex Date Just</a>
+              <a class="custom-footer-link">Rolex Oyster Perpetual</a>
+              <a class="custom-footer-link">Tag Heuer</a>
+              <a class="custom-footer-link">Tudor</a>
+              <a class="custom-footer-link">Ulysse Nardin</a>
+              <a class="custom-footer-link">Universal</a>
+              <a class="custom-footer-link">Vacheron Constantin</a>
+              <a class="custom-footer-link">Zenith</a>
+            </div>
+          </div>
+        </div>
+        <!-- FOOTER CAROUSEL MOBILE -->
+        <div
+          class="row d-sm-none p-0"
+          style="margin-top: 2.37rem; margin-bottom: 2rem"
+        >
+          <div class="footer-column">
+            <div class="col-6 d-flex flex-column gap-3">
+              <h3
+                class="d-none d-sm-block"
+                style="font-size: 1.4rem; margin: 0px"
+              >
+                MARCHI
+              </h3>
+              <div class="d-flex flex-column gap-1">
+                <h4 class="custom-footer-h4">A</h4>
+                <a class="custom-footer-link">Audemars Piguet (12)</a>
+              </div>
+              <div class="d-flex flex-column gap-1">
+                <h4 class="custom-footer-h4">B</h4>
+                <a class="custom-footer-link">Baume & Mercier (1)</a>
+                <a class="custom-footer-link">Bell & Ross (1)</a>
+                <a class="custom-footer-link">Blancpain (8)</a>
+                <a class="custom-footer-link">Breguet (9)</a>
+                <a class="custom-footer-link">Breitling (9)</a>
+                <a class="custom-footer-link">Bulgari (9)</a>
+                <a class="custom-footer-link">Brillanti (9)</a>
+              </div>
+              <div class="d-flex flex-column gap-1">
+                <h4 class="custom-footer-h4">C</h4>
+                <a class="custom-footer-link">Cartier (12)</a>
+                <a class="custom-footer-link">Chanel (12)</a>
+                <a class="custom-footer-link">Chopard (12)</a>
+                <a class="custom-footer-link">Corum (12)</a>
+              </div>
+            </div>
+            <div class="col-6 d-flex flex-column gap-3">
+              <div class="d-flex flex-column gap-1">
+                <h4 class="custom-footer-h4">D</h4>
+                <a class="custom-footer-link">Daniel Roth</a>
+              </div>
+              <div class="d-flex flex-column gap-1">
+                <h4 class="custom-footer-h4">E</h4>
+                <a class="custom-footer-link">Ebel</a>
+              </div>
+              <div class="d-flex flex-column gap-1">
+                <h4 class="custom-footer-h4">H</h4>
+                <a class="custom-footer-link">H. Moser & Cie.</a>
+                <a class="custom-footer-link">Hublot</a>
+              </div>
+              <div class="d-flex flex-column gap-1">
+                <h4 class="custom-footer-h4">I</h4>
+                <a class="custom-footer-link">IWC</a>
+              </div>
+              <div class="d-flex flex-column gap-1">
+                <h4 class="custom-footer-h4">J</h4>
+                <a class="custom-footer-link">Jaeger Le Coultre</a>
+              </div>
+              <div class="d-flex flex-column gap-1">
+                <h4 class="custom-footer-h4">L</h4>
+                <a class="custom-footer-link">Longines</a>
+              </div>
+              <div class="d-flex flex-column gap-1">
+                <h4 class="custom-footer-h4">O</h4>
+                <a class="custom-footer-link">Omega</a>
+              </div>
+            </div>
+          </div>
+          <div class="footer-column">
+            <div class="col-6 d-flex flex-column gap-3">
+              <div class="d-flex flex-column gap-1">
+                <h4 class="custom-footer-h4">P</h4>
+                <a class="custom-footer-link">Panerai</a>
+                <a class="custom-footer-link">Patek Philippe</a>
+                <a class="custom-footer-link">Paul Picot</a>
+                <a class="custom-footer-link">Parmigiani</a>
+              </div>
+              <div class="d-flex flex-column gap-1">
+                <h4 class="custom-footer-h4">R</h4>
+                <a class="custom-footer-link">Richard Mille</a>
+                <a class="custom-footer-link">Roger Dubuis</a>
+                <a class="custom-footer-link">Rolex Daytona</a>
+                <a class="custom-footer-link">Rolex GMT</a>
+                <a class="custom-footer-link">Rolex Submariner</a>
+                <a class="custom-footer-link">Rolex Sea Dweller</a>
+                <a class="custom-footer-link">Rolex Sky Dweller</a>
+                <a class="custom-footer-link">Rolex Yacht Master</a>
+                <a class="custom-footer-link">Rolex Milgauss</a>
+                <a class="custom-footer-link">Rolex Explorer</a>
+              </div>
+            </div>
+            <div class="col-6 d-flex flex-column gap-3">
+              <div class="d-flex flex-column">
+                <a class="custom-footer-link">Rolex Cellini</a>
+                <a class="custom-footer-link">Rolex Day Date</a>
+                <a class="custom-footer-link">Rolex Date Just</a>
+                <a class="custom-footer-link">Rolex Oyster Perpetual</a>
+                <a class="custom-footer-link">Tag Heuer</a>
+                <a class="custom-footer-link">Tudor</a>
+                <a class="custom-footer-link">Ulysse Nardin</a>
+                <a class="custom-footer-link">Universal</a>
+                <a class="custom-footer-link">Vacheron Constantin</a>
+                <a class="custom-footer-link">Zenith</a>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="text-center d-sm-none">
+          <span class="custom-footer-carousel-dot"></span>
+          <span class="custom-footer-carousel-dot"></span>
+        </div>
+      </div>
+      <div class="row">
+        <div
+          class="d-sm-none d-flex flex-column justify-content-center align-items-center"
+          style="padding: 2.5rem 1rem"
+        >
+          <h3
+            class="cormorant-garamond-semibold text-light-grey text-center"
+            style="font-size: 25px; margin-bottom: 1.4rem"
+          >
+            NAVIGA
+          </h3>
+          <nav class="d-flex flex-column gap-3 text-center text-light-grey">
+            <a>Home</a>
+            <a>Orologi in vendita</a>
+            <a>Acquistiamo orologi</a>
+            <a>Assistenza e riparazioni</a>
+            <a>Chi siamo</a>
+            <a>Contatti</a>
+          </nav>
+        </div>
+      </div>
+      <div class="row d-sm-none" style="padding: 2rem">
+        <img
+          src="./assets/title.png"
+          width="308.1"
+          height="46.83"
+          style="aspect-ratio: 721/110; margin-bottom: 4rem"
+        />
+        <div class="d-flex justify-content-center" style="gap: 8px">
+          <a class="d-inline-flex"><img src="./assets/facebook_icon.svg" /></a>
+          <a class="d-inline-flex"><img src="./assets/instagram_icon.svg" /></a>
+        </div>
+      </div>
+      <div
+        class="row"
+        style="
+          border-top: 1px solid var(--light-grey-transparent);
+          padding: 1.43rem;
+        "
+      >
+        <div class="text-center text-light-grey lato-regular">
+          <a class="text-light-grey" style="font-size: 13px">Dati societari </a>
+          <span> | </span>
+          <a class="text-light-grey" style="font-size: 13px">Credits </a>
+          <span> | </span>
+          <a class="text-light-grey" style="font-size: 13px">Privacy Policy </a>
+          <span> | </span>
+          <a class="text-light-grey" style="font-size: 13px">Cookie policy</a>
+        </div>
+      </div>
+    </div>
+    <script src="./main.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  </body>
+</html>

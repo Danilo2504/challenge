@@ -1,7 +1,6 @@
 const checkoutProduct = async (data) => {
   const payload = JSON.stringify(data);
-  console.log(data);
-  return fetch("http://api.test:80/checkout", {
+  return fetch("http://localhost:80/challenge/api_challenge/checkout", {
     method: "POST",
     body: payload,
   })
